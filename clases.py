@@ -1,6 +1,6 @@
 print("Esto es un programa de prueba")
 
-x = 1
+x1 = 2
 y = 5
 
 print(x+y)
