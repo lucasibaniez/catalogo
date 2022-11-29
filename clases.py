@@ -1,6 +1,8 @@
 print("Esto es un programa de prueba")
 
-x = 2
+operador1 = 2
 y = 5
 
-print(x+y)
+nombre = "Lucas"
+
+print(operador1+y)
