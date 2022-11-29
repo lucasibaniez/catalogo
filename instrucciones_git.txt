@@ -5,6 +5,7 @@ git clone https://github.com/lucasibaniez/catalogo.git
 
 2) Podemos ver el estado de un proyecto usando
 git status
+
 -------------------------------------------------------------------------
 
 3) Para agregar cambios
@@ -17,3 +18,8 @@ git commit -m "un mensaje"
 
 5) Subimos los cambios 
 git push
+
+-------------------------------------------------------------------------
+
+6) Traemos cambios remotos
+git pull
