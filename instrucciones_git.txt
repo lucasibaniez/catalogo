@@ -1,0 +1,16 @@
+1) Clonamos el proyecto utilizando el comando git clone:
+git clone https://github.com/lucasibaniez/catalogo.git
+
+2) Podemos ver el estado de un proyecto usando
+git status
+
+3) Para agregar cambios
+git add  nombre_archivo1 nombre_archivo2  
+o bien
+git add . (con esto agregamos todos los archivos)
+
+4) Commiteamos los cambios 
+git commit -m "un mensaje"
+
+5) Subimos los cambios 
+git push
