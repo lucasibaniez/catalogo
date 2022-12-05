@@ -49,8 +49,15 @@
                 <h1 class="fw-light">CATALOGO DE PRODUCTOS</h1>
                 <p class="lead text-muted">El mejor sitio para hacer tus compras.</p>
                 <p>
-                <a href="{% url 'login' %}" class="btn btn-primary my-2">Iniciar sesion</a>
-                <a href="#" class="btn btn-secondary my-2">Registrarme</a>
+                    
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'logout' %}" class="btn btn-primary my-2">Cerrar sesion</a> 
+                    {% else %}
+                        <a href="{% url 'login' %}" class="btn btn-primary my-2">Iniciar sesion</a>
+                        <a href="#" class="btn btn-secondary my-2">Registrarme</a>
+                    {% endif %}
+                        
+
                 </p>
             </div>
             </div>

@@ -28,7 +28,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 AUTH_USER_MODEL = "usuarios.Usuario"
+
 LOGIN_REDIRECT_URL = "/"
+LOGIN_URL = "/login/"
 # Application definition
 
 INSTALLED_APPS = [
