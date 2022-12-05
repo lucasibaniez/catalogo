@@ -21,5 +21,10 @@ def inicio(request):
     }
     return render(request, template_name, contexto)
 
+"""
 def login(request):
+    if 'btn_ingresar'in request.GET:
+        username = request.GET.get("username")
+    
     return render(request, "login.html", {})    
+"""    
