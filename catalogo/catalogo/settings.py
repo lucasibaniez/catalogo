@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = "usuarios.Usuario"
 
 # Application definition
 
@@ -37,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'productos'
+    'productos',
+    'usuarios'
 ]
 
 MIDDLEWARE = [
@@ -73,6 +75,8 @@ WSGI_APPLICATION = 'catalogo.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+
+
 
 DATABASES = {
     'default': {
