@@ -1,0 +1,9 @@
+{% extends 'base/base.html' %}
+
+{% block contenido %}
+    <form method="POST">{% csrf_token %}
+        {{form.as_p}}
+
+        <p><button class="w-100 btn btn-lg btn-primary" type="submit" name="btn_ingresar">CREAR</button></p>
+    </form>
+{% endblock contenido %}
