@@ -14,10 +14,9 @@ def inicio(request):
         descripcion="Pantalon azul"
     )
     """
-    productos = Producto.objects.all()
 
     contexto = {
-        'productos': productos
+        'productos': Producto.objects.all()
     }
     return render(request, template_name, contexto)
 

@@ -1,3 +1,11 @@
 from django.shortcuts import render
 
-# Create your views here.
+from productos.models import Producto
+
+def admin_listado_productos(request):
+    template_name = "productos/listado.html"
+
+    contexto = {
+        'productos': Producto.objects.all()
+    }
+    return render(request, template_name, contexto)
