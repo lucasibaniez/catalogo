@@ -16,7 +16,7 @@ def inicio(request):
     """
 
     contexto = {
-        'productos': Producto.objects.all()
+        'productos': Producto.objects.filter(activo=True)
     }
     return render(request, template_name, contexto)
 
