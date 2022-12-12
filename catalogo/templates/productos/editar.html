@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+
+{% block contenido %}
+    <form method="POST">{% csrf_token %}
+        {{form.as_p}}
+
+        <p><button class="w-100 btn btn-lg btn-primary" type="submit" name="btn_ingresar">GUARDAR</button></p>
+        <p><a href="{% url 'productos:admin_listado_productos' %}" class="w-100 btn btn-lg btn-primary">Cancelar</a></p>
+    </form>
+{% endblock contenido %}

@@ -28,7 +28,7 @@
                         <td>{{p.nombre}}</td>
                         <td>${{p.precio}}</td>
                         <td>
-                            <button type="button" class="btn btn-warning">Editar</button>
+                            <a href="{% url 'productos:editar' p.id %}" class="btn btn-warning">Editar</a>
                             <button type="button" class="btn btn-danger">Eliminar</button>
 
                         </td>
