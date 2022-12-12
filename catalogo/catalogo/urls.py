@@ -12,5 +12,6 @@ urlpatterns = [
     path('logout/', auth_views.logout_then_login, name="logout"),
 
     # Includes
-    path('productos/', include('productos.urls'))
+    path('productos/', include('productos.urls')),
+    path('usuarios/', include('usuarios.urls'))
 ]
