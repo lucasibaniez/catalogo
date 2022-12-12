@@ -20,9 +20,15 @@ class AdminListadoProductos(ListView):
     template_name = "productos/listado.html"
     model = Producto
     context_object_name = "productos"
-    paginate_by = 2
+    paginate_by = 10
 
+    def get_queryset(self):
+        productos = Producto.objects.all()
+        nombre_producto = self.request.GET.get("buscador")
+        if nombre_producto:
+            productos = productos.filter(nombre__contains=nombre_producto)
 
+        return productos.order_by("nombre")
 
 
 class NuevoProducto(CreateView):
