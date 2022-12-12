@@ -1,2 +1,4 @@
+catalogo/catalogo/settings/local.py
+
 *.pyc
 *.env

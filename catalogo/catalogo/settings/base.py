@@ -19,14 +19,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=cqa)b=k#$*jde33+*fj+!!m*p!ane9y59q2n8i3z4&xqamxix'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
 AUTH_USER_MODEL = "usuarios.Usuario"
 
 LOGIN_REDIRECT_URL = "/"
@@ -78,21 +70,7 @@ WSGI_APPLICATION = 'catalogo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'mssql',
-        'NAME': 'catalogo',
-        'USER': 'sa',
-        'PASSWORD': 'P741852963*',
-        'HOST': 'localhost',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server'
-        },
-    },
-}
-
+from decouple import config
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
