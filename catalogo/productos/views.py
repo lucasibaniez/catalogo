@@ -2,9 +2,10 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse
+from django.http import HttpResponseRedirect
 
 from .forms import ProductoForm
-from .models import Producto
+from .models import Producto, MeGusta
 
 """
 def admin_listado_productos(request):
@@ -47,3 +48,11 @@ class EditarProducto(UpdateView):
 
     def get_success_url(self):
         return reverse("productos:admin_listado_productos")
+
+
+def dar_me_gusta(request, id_producto):
+    mg = MeGusta.objects.filter(usuario=request.user, producto__id=id_producto)
+    if not mg:
+        mg = MeGusta.objects.create(usuario=request.user, producto=Producto.objects.get(id=id_producto))
+    return HttpResponseRedirect(reverse("inicio"))
+
