@@ -9,19 +9,19 @@ class Producto(models.Model):
 
     activo = models.BooleanField(default=True)
 
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, null=True, related_name="categorias")
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, null=True, related_name="categorias", blank=True)
 
     categoria2 = models.ManyToManyField(Categoria)
+
+    imagen = models.ImageField(upload_to="productos", null=True, blank=True)
+    # models.FileField
+    # models.BinaryField
 
     # ficha = models.OneToOneField(Ficha)
 
     def __str__(self):
         return self.nombre
 
-
-x = Producto.objects.filter(id=1).first() # exists()
-if x:
-    pass
 
 """
 class ProductoCategoria(models.Model):

@@ -7,7 +7,14 @@
         {% for p in productos %}
             <div class="col">
                 <div class="card shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                    
+                    {% if p.imagen %}
+                        <img src="{{p.imagen.url}}" class="bd-placeholder-img card-img-top" width="100%" height="225">
+                    {% else %}
+                        <svg  xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Sin imagen</text></svg>
+                    {% endif %}
+                        
+                    
 
                     <div class="card-body">
                         <h5 class="card-title">{{p.nombre}} <span class="badge bg-secondary">${{p.precio}}</span><span class="badge rounded-pill text-bg-info">{{p.categoria.nombre}}</span>
