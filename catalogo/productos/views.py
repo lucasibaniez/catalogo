@@ -39,6 +39,11 @@ class NuevoProducto(CreateView):
 
     def get_success_url(self):
         return reverse("productos:admin_listado_productos")
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # context["producto"] = Producto.objects.get(id=3) 
+        return context
 
 
 class EditarProducto(UpdateView):   
