@@ -15,8 +15,12 @@
                         <p class="card-text">{{p.descripcion}}</p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                
+                                {% for c in p.categoria2.all %}
+                                    <span class="badge rounded-pill text-bg-info">{{c.nombre}}</span>
+                                {% endfor %}
+                                    
+
                             </div>
                             <small class="text-muted">9 mins</small>
                         </div>

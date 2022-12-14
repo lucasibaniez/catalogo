@@ -9,7 +9,23 @@ class Producto(models.Model):
 
     activo = models.BooleanField(default=True)
 
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, null=True)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, null=True, related_name="categorias")
+
+    categoria2 = models.ManyToManyField(Categoria)
+
+    # ficha = models.OneToOneField(Ficha)
 
     def __str__(self):
         return self.nombre
+
+
+x = Producto.objects.filter(id=1).first() # exists()
+if x:
+    pass
+
+"""
+class ProductoCategoria(models.Model):
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, null=True)
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE, null=True)
+    # fecha
+"""
