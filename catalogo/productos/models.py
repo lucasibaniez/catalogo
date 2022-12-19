@@ -20,6 +20,8 @@ class Producto(models.Model):
 
     # ficha = models.OneToOneField(Ficha)
 
+    usuario =  models.ForeignKey(Usuario, on_delete=models.CASCADE, null=True, related_name="productos", blank=True)
+
     def __str__(self):
         return self.nombre
 
