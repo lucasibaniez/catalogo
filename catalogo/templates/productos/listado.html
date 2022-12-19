@@ -17,6 +17,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Nombre Producto</th>
                     <th scope="col">Precio</th>
+                    <th>Categoria</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -27,6 +28,11 @@
                         <th scope="row">{{p.id}}</th>
                         <td>{{p.nombre}}</td>
                         <td>${{p.precio}}</td>
+                        <td>
+                        {% for c in p.categoria2.all  %}
+                            {{c.id}}
+                        {% endfor %}
+                        </td>
                         <td>
                             <a href="{% url 'productos:editar' p.id %}" class="btn btn-warning">Editar</a>
                             <button type="button" class="btn btn-danger">Eliminar</button>

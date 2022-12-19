@@ -3,6 +3,9 @@ from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse
 from django.http import HttpResponseRedirect
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+from utils.mixins import IsAdminMixin
 
 from .forms import ProductoForm
 from .models import Producto, MeGusta
@@ -17,11 +20,11 @@ def admin_listado_productos(request):
     return render(request, template_name, contexto)
 """
 
-class AdminListadoProductos(ListView):
+class AdminListadoProductos(LoginRequiredMixin, IsAdminMixin, ListView):
     template_name = "productos/listado.html"
     model = Producto
     context_object_name = "productos"
-    paginate_by = 10
+    paginate_by = 2
 
     def get_queryset(self):
         productos = Producto.objects.all()

@@ -74,6 +74,14 @@
         <div class="album py-5 bg-light">
             <div class="container">
                 
+                {% if user.is_authenticated %}
+                  
+                
+                  
+                  <div class="row">
+                    <p>Hola {{user.username}}!</p>
+                  </div>
+                {% endif %}
                 <div class="row">
                     <nav class="navbar navbar-expand-lg bg-light">
                         <div class="container-fluid">
@@ -86,9 +94,15 @@
                               <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
                               </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="{% url 'productos:admin_listado_productos' %}">Productos</a>
-                              </li>
+                              
+                              {% if user.es_administrador %}
+                                
+                              
+                                
+                                <li class="nav-item">
+                                  <a class="nav-link" href="{% url 'productos:admin_listado_productos' %}">Productos</a>
+                                </li>
+                              {% endif %}
                               <!--
                               <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
