@@ -24,7 +24,7 @@ class AdminListadoProductos(LoginRequiredMixin, IsAdminMixin, ListView):
     template_name = "productos/listado.html"
     model = Producto
     context_object_name = "productos"
-    paginate_by = 2
+    paginate_by = 20
 
     def get_queryset(self):
         productos = Producto.objects.all()
